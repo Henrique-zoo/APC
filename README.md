@@ -1,2 +1,2 @@
 # Algoritimos e Programação de Computadores
-Aqui, eu reúno os códigos que formulei durante a realização da matéria Algoritimos e Programação de Computadores (APC) na Universidade de Brasília (UnB), sob orientação do professor Vinícius Ruela (https://viniciusrpb.github.io/)
+Aqui, eu reúno os códigos que formulei durante a realização da matéria Algoritimos e Programação de Computadores (APC) na Universidade de Brasília (UnB), sob orientação do professor Vinícius Ruela (https://viniciusrpb.github.io/). Todas as questões aqui presentes foram tiradas da plataforma [Beecrowd](https://judge.beecrowd.com) e a grande maioria foi feita em [Python 3.11](https://www.python.org/downloads/release/python-3110/), que era a linguagem usada na disciplina.
