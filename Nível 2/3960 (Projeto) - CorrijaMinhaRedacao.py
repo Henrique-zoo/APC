@@ -9,6 +9,7 @@ def somandoIndice(a, iEntreAspas, separador):
                 i += iEntreAspas[k] - 1
         indices.append(i)
     return indices
+
 def criandoString(a, b):
     aspas = [i for i in range(len(a)) if a[i] == '"']
     substring = ''
@@ -19,6 +20,7 @@ def criandoString(a, b):
         string = a.replace(substring, "$")
         return criandoString(string, b)
     return a, b
+
 def limpandoEspacos(a, iEntreAspas):
     string = f'{a[0]}'
     indices = []
@@ -32,6 +34,7 @@ def limpandoEspacos(a, iEntreAspas):
             largura.append(len(indices2))
             string += a[i]
     return string, indices, largura
+
 def informal(a, iEntreAspas):
     indices = []
     palavras = a.split()
@@ -42,12 +45,14 @@ def informal(a, iEntreAspas):
                 indices.append(iEntreAspas[i+j])
         j += len(palavra) + 1
     return indices
+
 def maiusculo(a, iEntreAspas):
     indices = []
     for i in range(1, len(a)-1):
         if 65 <= ord(a[i]) <= 90 and (65 <= ord(a[i-1]) <= 122 or a[i-2] != "."):
             indices.append(iEntreAspas[i])
     return indices
+
 def minusculo(a, iEntreAspas):
     indices = []
     if 97 <= ord(a[0]) <= 122:
@@ -56,6 +61,7 @@ def minusculo(a, iEntreAspas):
         if a[i] == '.' and (122 > ord(a[i+2]) > 97):
             indices.append(iEntreAspas[i+2])
     return indices
+
 def pontuacao(a, iEntreAspas):
     indices = []
     for i in range(len(a)-1):
@@ -68,9 +74,11 @@ largura = []
 texto, largura = criandoString(texto, largura)
 indiceEntreAspas = somandoIndice(texto, largura, "$")
 texto, espacos, largura = limpandoEspacos(texto, indiceEntreAspas)
+
 for i in range(len(largura)):
     if indiceEntreAspas[i] >= i:
         indiceEntreAspas[i] += largura[i]
+
 inf = informal(texto, indiceEntreAspas)
 mai = maiusculo(texto, indiceEntreAspas)
 min = minusculo(texto, indiceEntreAspas)
